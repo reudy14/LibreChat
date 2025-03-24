@@ -1,0 +1,38 @@
+version: 1.2.1
+cache: true
+
+# Custom interface configuration
+interface:
+  customWelcome: "Vitej v Data2SQL"
+
+  endpointsMenu: false
+  modelSelect: false
+  parameters: false
+  sidePanel: false
+  presets: false
+  prompts: false
+  bookmarks: false
+  multiConvo: false
+  agents: false
+
+# Definition of custom endpoints
+endpoints:
+  custom:
+    - name: "Data2SQL"
+      baseURL: "http://host.docker.internal:8008"
+      apiKey: "can't be empty :("
+      titleModel: "title"
+      titleConvo: true
+      models:
+        default: ["data2sql"]
+  # azureOpenAI:
+  #   titleModel: "gpt-4o"
+  #   titleConvo: true
+  #   groups:
+  #     - group: "rg-verisoft-data2sql"
+  #       apiKey: "KEY"
+  #       instanceName: "data2sql"
+  #       models:
+  #         gpt-4o:
+  #           deploymentName: "gpt-4o"
+  #           version: "2024-08-01-preview"
