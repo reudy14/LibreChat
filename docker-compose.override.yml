@@ -30,12 +30,12 @@ services:
       source: ./librechat.yaml
       target: /app/librechat.yaml
 
-# # LOCAL BUILD
-#   api:
-#     image: librechat
-#     build:
-#       context: .
-#       target: node
+# LOCAL BUILD
+  # api:
+    image: librechat
+    build:
+      context: .
+      target: node
 
 # # BUILD FROM LATEST IMAGE
 #   api:

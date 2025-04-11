@@ -22,6 +22,7 @@ import useHasAccess from '~/hooks/Roles/useHasAccess';
 import { useFileDownload } from '~/data-provider';
 import useLocalize from '~/hooks/useLocalize';
 import store from '~/store';
+import SQLViewer from '~/components/Messages/Content/SQLViewer'
 
 type TCodeProps = {
   inline?: boolean;
@@ -46,7 +47,9 @@ export const code: React.ElementType = memo(({ className, children }: TCodeProps
     resetCounter();
   }, [children, resetCounter]);
 
-  if (isMath) {
+  if (lang?.toLowerCase() === 'sql') {
+    return (<SQLViewer query={children} />)
+  } else if (isMath) {
     return <>{children}</>;
   } else if (isSingleLine) {
     return (
